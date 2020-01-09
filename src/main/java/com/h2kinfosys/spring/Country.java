@@ -2,6 +2,10 @@ package com.h2kinfosys.spring;
 
 public class Country {
 	
+	public Country() {
+		System.out.println("Country Created");
+	}
+	
 	private String countryName;
 
 	/**

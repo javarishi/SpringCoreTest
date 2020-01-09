@@ -6,7 +6,7 @@ public class SpringTester {
 
 	public static void main(String[] args) {
 	
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring5.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring5_day1.xml");
 		
 		HelloWorld hello1 = context.getBean("hello", HelloWorld.class);
 		System.out.println("Hello 1 " + hello1.getMessage());
