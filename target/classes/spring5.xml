@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-init-method="start"
+        default-destroy-method="end">
+
+	<!-- constructor-arg three ways to pass 1. name 2. type 3. index -->
+	<bean name="hello" 
+		class="com.h2kinfosys.spring.HelloWorld" 
+		scope="singleton">
+		<constructor-arg type="java.lang.String" index="1" value="80338" />
+		<constructor-arg type="java.lang.String" index="0" value="Spanish" />
+		<property name="message" value="Hello World from Spring" />
+		<property name="country" ref="usa" />
+	</bean>    
+
+	<bean name="usa" class="com.h2kinfosys.spring.Country">
+		<property name="countryName" value="United States of America" />
+	</bean>
+
+
+</beans>
