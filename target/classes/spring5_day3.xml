@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="store" class="com.h2kinfosys.spring.autowire.Store" autowire="constructor"/>
+
+
+	<bean name="distributionCenter" class="com.h2kinfosys.spring.autowire.DistributionCenter">
+		<property name="dcType" value="Bulk International DC" />
+		<property name="dcNumber" value="DC1122" />
+	</bean>
+	
+	<bean name="dcTwo" class="com.h2kinfosys.spring.autowire.DistributionCenter">
+		<property name="dcType" value="Bulk International DC" />
+		<property name="dcNumber" value="DC13344" />
+	</bean>
+	
+	<bean name="emp" class="com.h2kinfosys.spring.autowire.Employee">
+		<property name="empId" value="100"></property>
+	</bean>
+
+	<bean name="base" abstract="true">
+		<property name="messageOne" value="Abstract Base: First Message" />
+		<property name="messageTwo" value="Abstract Base: Second Message" />
+	</bean>
+
+	<bean name="child" parent="base" class="com.h2kinfosys.spring.inheritance.ChildClass">
+		<property name="messageThree" value="Child: Third Message" />
+	</bean>
+	
+	<bean class="com.h2kinfosys.spring.inheritance.AuditProcessor" />
+
+
+</beans>
